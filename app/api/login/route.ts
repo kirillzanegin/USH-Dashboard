@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.redirect(url);
     }
 
-    const response = NextResponse.redirect(new URL('/', request.url));
+    const response = NextResponse.redirect(new URL('/', request.url), 303);
     response.cookies.set('dashboard_auth', login, {
       httpOnly: true,
       sameSite: 'lax',
